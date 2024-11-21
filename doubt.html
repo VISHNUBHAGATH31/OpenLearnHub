@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doubt Clarification</title>
+  
+    <link rel="stylesheet" href="css/doubt.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+                <!-- Add the Doubt Clarification link -->
+                <li><a class="nav-link scrollto" href="#">Doubt Clarification</a></li>
+            </ul>
+        </nav>
+
+        <!-- Floating form button -->
+        <div class="floating-tile" id="floating-tile" onclick="toggleFormVisibility()">Submit your doubt</div>
+        
+        <!-- Floating form container -->
+        <div class="floating-form-container" id="floating-form-container">
+            <div class="close-marker" onclick="toggleFormVisibility()">X</div>
+            <form id="doubt-form" enctype="multipart/form-data">
+                <h1>Doubt Clarification</h1>
+                <div class="form-group">
+                    <select id="class-dropdown" onchange="updateSubjects()">
+                        <option value="">Select Class</option>
+                        <option value="class6">Class 6</option>
+                        <option value="class7">Class 7</option>
+                        <option value="class8">Class 8</option>
+                        <option value="class9">Class 9</option>
+                        <option value="class10">Class 10</option>
+                    </select>
+                    <select id="subject-dropdown"></select>
+                </div>
+
+                <div class="form-group" id="image-upload">
+                    <label for="file-input" class="file-label">Choose File</label>
+                    <input type="file" id="file-input" accept="image/*, .pdf" onchange="displayImage()">
+                    <img id="image-preview" alt="Image Preview">
+                    <button id="remove-file" onclick="removeFile()">Remove File</button>
+                </div>
+
+                <textarea id="doubt-textarea" placeholder="Write your doubt here..."></textarea>
+
+                <button id="submit-button" type="button" onclick="submitDoubt()">Submit Doubt</button>
+            </form>
+        </div>
+
+        <!-- New section for viewing all doubts -->
+        <div class="all-doubts-container" id="all-doubts-container">
+            <!-- Add Home button next to the All Doubts header -->
+            <div>
+                <a class="nav-link scrollto active" href="index.html">Home</a>
+            </div>
+            <h2>All Doubts</h2>
+            <div class="all-doubts-list-container">
+                <ul id="all-doubts-list" class="doubts-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/doubt.js"></script>
+</body>
+</html>

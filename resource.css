@@ -1,0 +1,28 @@
+/* Add your global styles here */
+
+#searchResultsContainer {
+    display: none;
+    margin-top: 20px;
+}
+
+#searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.result-item {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.result-item:hover {
+    transform: scale(1.05);
+}
